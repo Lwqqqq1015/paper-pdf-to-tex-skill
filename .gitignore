@@ -1,0 +1,14 @@
+*.aux
+*.log
+*.out
+*.toc
+*.synctex.gz
+*.pdf
+*.png
+*.jpg
+*.jpeg
+*.tif
+*.tiff
+__pycache__/
+.DS_Store
+Thumbs.db

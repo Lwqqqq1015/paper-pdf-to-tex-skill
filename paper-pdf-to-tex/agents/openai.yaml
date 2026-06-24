@@ -1,0 +1,4 @@
+interface:
+  display_name: "Paper PDF to TeX"
+  short_description: "Convert journal PDFs into LaTeX from rendered page images."
+  default_prompt: "Use $paper-pdf-to-tex to convert this journal article PDF into a single LaTeX .tex file from page images."
