@@ -25,7 +25,7 @@
 
 ## Figures
 
-Preserve figure mentions in the prose and preserve every visible figure caption, title, panel label, and note. Replace the actual figure graphic with a blank placeholder:
+Preserve figure mentions in the prose and preserve every visible figure caption, title, panel label, and note. Do not place figure environments inline in the body text. Collect generated figure environments in a final `Figures` section. Replace the actual figure graphic with a blank placeholder:
 
 ```latex
 \begin{figure}[htbp]
@@ -40,7 +40,7 @@ Use one placeholder per figure or per figure panel group, depending on how the s
 
 ## Tables
 
-Convert source tables to LaTeX table environments. Prefer:
+Convert source tables to LaTeX table environments, but do not place table environments inline in the body text. Preserve body mentions and callouts as prose, then collect generated table environments in a final `Tables` section. Prefer:
 
 - `tabular` with `booktabs` for normal tables.
 - `tabularx` when columns need wrapping.
@@ -71,6 +71,22 @@ Use this shape for ordinary tables:
 ```
 
 Only use `tablenotes` inside `threeparttable`; otherwise place notes as `\caption*{...}` or a `minipage` under the table.
+
+## End Matter Layout
+
+Place collected floats near the end of the file in this order unless the user requests otherwise:
+
+```latex
+\clearpage
+\section*{Tables}
+... all converted table environments ...
+
+\clearpage
+\section*{Figures}
+... all figure placeholder environments with captions and notes ...
+```
+
+If a conversion-process note is needed, place it after the collected tables and figures and title it `Conversion Note`.
 
 ## Cleanup
 

@@ -13,8 +13,8 @@
 - 将学术论文 PDF 渲染为逐页 PNG 图片。
 - 基于页面图像逐页识别正文、标题、作者、摘要、关键词、章节、脚注、公式、表格、图题和参考文献。
 - 把所有页面内容直接粘贴式合并到一个总 `.tex` 文件中。
-- 保留文中 figure 引用、figure 标题和注释；实际图像用较小的空白占位框替代。
-- 将 table 转为 LaTeX 表格，而不是截图。
+- 保留文中 figure 引用、figure 标题和注释；实际图像用较小的空白占位框替代，并集中放在最终 `Figures` 部分。
+- 将 table 转为 LaTeX 表格，而不是截图，并集中放在最终 `Tables` 部分。
 - 行内公式和符号使用 `$...$`。
 - 有编号的行间公式使用 `\begin{equation}...\end{equation}`。
 - 文内引用保持为论文可见的作者年份文本，例如 `(Aldy et al., 2008)`，不转换为 `\cite{}`、`\citep{}` 或 `\citet{}`。
@@ -72,6 +72,7 @@ paper-pdf-to-tex/
 - 不使用现有 PDF 转换类 skills 替代本流程。
 - 不使用 `\input` 或 `\include` 组装最终文件。
 - 表格必须转为 LaTeX 表格。
+- 表格环境集中放在最终 `Tables` 部分，图环境集中放在最终 `Figures` 部分，正文中只保留可见的图表引用和描述。
 - 图像暂时可以不重建，但图题、注释和正文中的图描述必须保留。
 
 ## English
@@ -85,8 +86,8 @@ The central rule is: **render the PDF into page images first, then visually reco
 - Render academic paper PDFs into page-level PNG images.
 - Visually reconstruct title, authors, abstract, keywords, sections, body text, footnotes, equations, tables, figure captions, and references from page images.
 - Paste all converted page content into one master `.tex` file.
-- Preserve in-text figure mentions, figure captions, and notes; replace actual figure graphics with compact blank placeholders.
-- Convert tables into LaTeX tables instead of screenshots.
+- Preserve in-text figure mentions, figure captions, and notes; replace actual figure graphics with compact blank placeholders collected in the final `Figures` section.
+- Convert tables into LaTeX tables instead of screenshots, collected in the final `Tables` section.
 - Use `$...$` for inline math and symbols.
 - Use `\begin{equation}...\end{equation}` for numbered display equations.
 - Keep in-text citations as visible author-year prose, such as `(Aldy et al., 2008)`, instead of converting them into `\cite{}`, `\citep{}`, or `\citet{}`.
@@ -144,4 +145,5 @@ paper-pdf-to-tex/
 - Do not replace this workflow with existing PDF conversion skills.
 - Do not use `\input` or `\include` to assemble the final file.
 - Convert tables into LaTeX tables.
+- Collect table environments in the final `Tables` section and figure environments in the final `Figures` section, while keeping visible in-text references and descriptions in the body.
 - Figure graphics may be skipped temporarily, but figure captions, notes, and in-text descriptions must be preserved.
